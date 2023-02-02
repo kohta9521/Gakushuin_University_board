@@ -23,7 +23,7 @@ function Post() {
                         </h3>
                     </div>
                     <div className='post__headerDescription'>
-                        <p>Reactなう</p>
+                        <p>民法は捨て</p>
                     </div>
                 </div>
                 <img src="https://source.unsplash.com/random" alt='サンプル画像'/>
