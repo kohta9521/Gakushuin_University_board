@@ -2,7 +2,8 @@ import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import "./Widgets.css";
 
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+// build時にエラーが発生するため使用していない機能のimportを削除しています。　エラーが発生した場合はこちらの内容の確認をお願いします。
+import { TwitterTimelineEmbed, TwitterShareButton} from 'react-twitter-embed';
 
 function Widgets() {
   return (
