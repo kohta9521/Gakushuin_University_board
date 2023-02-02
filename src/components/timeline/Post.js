@@ -5,28 +5,30 @@ import { ChatBubbleOutline, FavoriteBorder, PublishOutlined, Repeat } from '@mui
 
 import "./Post.css";
 
-function Post() {
+function Post({ displayName, username, verified, text, image, avatar}) {
     return (
         <div className='post'>
             <div className='post__avatar'>
-                <Avatar />
+                <Avatar 
+                src={avatar}
+                />
             </div>
             <div className='post__body'>
                 <div className='post__header'>
                     <div className='post__headerText'>
                         <h3>
-                            Kohta
+                            {displayName}
                         <span className='post__headerSpecial'>
                             <VerifiedUserIcon className='post__badge' />
-                            @kohta
+                            @{username}
                         </span>
                         </h3>
                     </div>
                     <div className='post__headerDescription'>
-                        <p>民法は捨て</p>
+                        <p>{text}</p>
                     </div>
                 </div>
-                <img src="https://source.unsplash.com/random" alt='サンプル画像'/>
+                <img src={image} alt='サンプル画像'/>
                 <div className='post__footer'>
                     <ChatBubbleOutline fontSize="small" />
                     <Repeat fontSize="small" />

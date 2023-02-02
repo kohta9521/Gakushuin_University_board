@@ -8,7 +8,8 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
-import TwitterIcon from '@mui/icons-material/Twitter';
+// 学習院のロゴに置き換えているため本来使用のttwitterアイコンのimportをコメントアウトしています
+// import TwitterIcon from '@mui/icons-material/Twitter';
 import SidebarOption from './SidebarOption';
 
 import { Button } from "@mui/material";
@@ -26,14 +27,14 @@ const sidebar = () => {
         <SidebarOption text="ホーム" Icon={HomeIcon}/>
         <SidebarOption text="話題を検索" Icon={SearchIcon}/>
         <SidebarOption text="通知" Icon={NotificationsNoneIcon}/>
-        <SidebarOption text="メッセージ" Icon={MailOutlineIcon}/>
-        <SidebarOption text="ブックマーク" Icon={BookmarkBorderIcon}/>
-        <SidebarOption text="リスト" Icon={ListAltIcon}/>
+        <SidebarOption text="G-port" Icon={MailOutlineIcon}/>
+        <SidebarOption text="WebClass" Icon={BookmarkBorderIcon}/>
+        <SidebarOption text="Manaba" Icon={ListAltIcon}/>
         <SidebarOption text="プロフィール" Icon={PermIdentityIcon}/>
         <SidebarOption text="もっと見る" Icon={MoreHorizIcon}/>
 
         {/* ツイートボタン */}
-        <Button className='sidebar__tweet' variant="outlined">ツイートする</Button>
+        <Button className='sidebar__tweet' variant="outlined" fullWidth>ツイートする</Button>
     </div>
     )
 }
