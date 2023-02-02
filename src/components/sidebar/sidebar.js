@@ -12,7 +12,13 @@ const sidebar = () => {
 
         {/* sidebarOprion */}
         <SidebarOption text="ホーム" Icon={HomeIcon}/>
-        {/* sidebarOprion */}
+        <SidebarOption text="話題を検索" Icon={HomeIcon}/>
+        <SidebarOption text="通知" Icon={HomeIcon}/>
+        <SidebarOption text="メッセージ" Icon={HomeIcon}/>
+        <SidebarOption text="ブックマーク" Icon={HomeIcon}/>
+        <SidebarOption text="リスト" Icon={HomeIcon}/>
+        <SidebarOption text="プロフィール" Icon={HomeIcon}/>
+        <SidebarOption text="もっと見る" Icon={HomeIcon}/>
 
         {/* ツイートボタン */}
     </div>
