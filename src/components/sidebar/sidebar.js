@@ -12,6 +12,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import SidebarOption from './SidebarOption';
 
 import { Button } from "@mui/material";
+import "./Sidebar.css";
 
 const sidebar = () => {
     return (
