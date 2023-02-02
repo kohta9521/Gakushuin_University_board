@@ -2,3 +2,11 @@ body {
   --twitter-color: #50b6f5;
   --twitter-background: #e7ecf0;
 }
+
+.app {
+  display: flex;
+  heght: 100vh;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
