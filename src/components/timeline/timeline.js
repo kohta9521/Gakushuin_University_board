@@ -2,8 +2,17 @@ import React from 'react'
 import "./timeline.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
+import db from "../../firebase.js";
+import { collection, getDocs } from "firebase/firestore"; 
 
 function timeline() {
+
+  const postData = collection(db, "posts");
+  getDocs(postData).then((querySnapshot) => {
+    console.log(querySnapshot);
+  });
+
+
   return (
     <div className='timeline'>
         {/* header */}
@@ -25,4 +34,4 @@ function timeline() {
   )
 }
 
-export default timeline
+export default timeline;
