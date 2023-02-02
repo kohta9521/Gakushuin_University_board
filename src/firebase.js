@@ -1,8 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCQGGDU4HUXCdsKaBI-ca77WQVBcrKQ3T8",
   authDomain: "twitter-clone-8ba70.firebaseapp.com",
@@ -12,7 +10,7 @@ const firebaseConfig = {
   appId: "1:193123878225:web:019f84a1ce85028be13f70"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 const db = getFirestore(app);
+
+export default db;
