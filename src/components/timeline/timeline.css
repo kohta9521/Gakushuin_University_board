@@ -1,11 +1,12 @@
 .timeline {
+  overflow-y: scroll;
   flex: 0.45;
   border-right: 1px solid var(--twitter-background);
-  overflow-y: scroll;
 }
 
 .timeline::-webkit-scrollbar {
   display: none;
+  overflow-y: scroll;
 }
 
 .timeline__header {
@@ -15,9 +16,11 @@
   z-index: 100;
   border: 1px solid var(--twitter-background);
   padding: 15px 20px;
+  overflow-y: scroll;
 }
 
 .timeline__header > h2 {
   font-size: 20px;
   font-weight: 800;
+  overflow-y: scroll;
 }
