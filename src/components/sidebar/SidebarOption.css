@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: color 0, 15s ease-out;
+  transition: color 0.15s ease-out;
 }
 .sidebarOption:hover {
   background-color: #e8f5fe;
