@@ -34,7 +34,7 @@ function timeline() {
           username = "piano_kohta"
           varified={true}
           text = "民法は諦め"
-          avatar="http://shincode.info/wp-content/uploads/2021/12/icon.png"
+          avatar=""
           image = "https://source.unsplash.com/random"
         />
     </div>
