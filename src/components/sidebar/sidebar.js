@@ -21,7 +21,7 @@ const sidebar = () => {
         {/* ツイッターアイコン */}
         {/* <TwitterIcon className='sidebar__twitterIcon' /> */}
         <img className='sidebar__twitterIcon'   src=" http://localhost:3000/images/sakura.jpeg" alt="ロゴ画像" />
-        <p>学習院大学　掲示板</p>
+        {/* <p>学習院大学　掲示板</p> */}
 
         {/* sidebarOprion */}
         <SidebarOption text="ホーム" Icon={HomeIcon}/>
