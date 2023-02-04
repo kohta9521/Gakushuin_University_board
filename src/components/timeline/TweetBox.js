@@ -2,6 +2,9 @@ import { Avatar, Button } from '@mui/material'
 import React from 'react'
 import "./TweetBox.css";
 import react, { useState } from 'react';
+import { collection, addDoc } from "firebase/firestore"; 
+import db from "../../firebase"
+
 
 const TweetBox = () => {
 
@@ -13,6 +16,17 @@ const TweetBox = () => {
         // ボタンが押された際にリロードされるのを防ぐ記述
         e.preventDefault();
         
+        addDoc(collection(db, "posts"), {
+            displayName: "kohta",
+            username: "piano_kohta",
+            varified: true,
+            text: tweetMessage,
+            avatar: "http://shincode.info/wp-content/uploads/2021/12/icon.png",
+            image: tweetImage,
+        });
+
+        setTweetMessage("");
+        setTweetImage("");
     };
 
     return (
@@ -21,6 +35,7 @@ const TweetBox = () => {
             <div className='tweetBox__input'>
                 <Avatar />
                 <input
+                    value={tweetMessage}
                     placeholder='いまどうしてる?'
                     type='text'
                     onChange={(e) => setTweetMessage(e.target.value)}
@@ -28,6 +43,7 @@ const TweetBox = () => {
                 </input>
             </div>
             <input
+                value={tweetImage}
                 className='tweetBox__imageInput'
                 placeholder='画像のURlを入力してください'
                 type='text'
