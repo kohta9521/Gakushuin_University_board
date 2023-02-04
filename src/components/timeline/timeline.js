@@ -4,9 +4,10 @@ import "./Timeline.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import db from "../../firebase";
-import { collection, getDocs, query, orderBy } from "firebase/firestore"; 
+import { collection, getDocs, query, orderBy, onSnapshot } from "firebase/firestore"; 
 import react, { useState } from 'react';
 import { effect } from '@chakra-ui/react';
+import FlipMove from 'react-flip-move';
 
 function Timeline() {
 
@@ -15,7 +16,11 @@ function Timeline() {
   useEffect(() => {
       const postData = collection(db, "posts");
       const q = query(postData, orderBy("timestamp", "desc"));
-      getDocs(q).then((querySnapshot) => {
+      // getDocs(q).then((querySnapshot) => {
+      //   setPosts(querySnapshot.docs.map((doc) => doc.data()));
+      // });
+      // リアルタイムでデータを取得 onsnapshot
+      onSnapshot(q, (querySnapshot) => {
         setPosts(querySnapshot.docs.map((doc) => doc.data()));
       });
     }, []);
@@ -30,17 +35,20 @@ function Timeline() {
         <TweetBox />
 
         {/* post */}
-        {posts.map((post) => (
-        <Post 
-          key={post.text}
-          displayName = {post.displayName}
-          username = {post.username}
-          varified={post.varified}
-          text = {post.text}
-          avatar={post.avatar}
-          image = {post.image}
-        />
-        ))}
+        <FlipMove>
+          {posts.map((post) => (
+            <Post 
+              key={post.text}
+              displayName = {post.displayName}
+              username = {post.username}
+              varified={post.varified}
+              text = {post.text}
+              avatar={post.avatar}
+              image = {post.image}
+            />
+            ))}
+        </FlipMove>
+
     </div>
   );
 }
