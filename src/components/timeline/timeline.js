@@ -4,7 +4,7 @@ import "./Timeline.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import db from "../../firebase";
-import { collection, getDocs } from "firebase/firestore"; 
+import { collection, getDocs, query, orderBy } from "firebase/firestore"; 
 import react, { useState } from 'react';
 import { effect } from '@chakra-ui/react';
 
@@ -14,7 +14,8 @@ function Timeline() {
 
   useEffect(() => {
       const postData = collection(db, "posts");
-      getDocs(postData).then((querySnapshot) => {
+      const q = query(postData, orderBy("timestamp", "desc"));
+      getDocs(q).then((querySnapshot) => {
         setPosts(querySnapshot.docs.map((doc) => doc.data()));
       });
     }, []);
