@@ -1,16 +1,19 @@
 import React from 'react'
-import "./timeline.css";
+// import react, {useState} from 'react';
+import "./Timeline.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import db from "../../firebase";
 import { collection, getDocs } from "firebase/firestore"; 
+import react, { useState } from 'react';
 
-function timeline() {
+function Timeline() {
 
-  
+  const [posts, setPosts] = useState([]);
+
   const postData = collection(db, "posts");
   getDocs(postData).then((querySnapshot) => {
-    console.log(querySnapshot.docs.map((doc) => doc.data()));
+    setPosts(querySnapshot.docs.map((doc) => doc.data()));
   });
 
   return (
@@ -21,17 +24,20 @@ function timeline() {
         </div>
         {/* tweetbox */}
         <TweetBox />
+
         {/* post */}
+        {posts.map((post) => (
         <Post 
-          displayName = "Kohta"
-          username = "piano_kohta"
-          varified={true}
-          text = "民法は諦め"
-          avatar=""
-          image = "https://source.unsplash.com/random"
+          displayName = {post.displayName}
+          username = {post.username}
+          varified={post.varified}
+          text = {post.text}
+          avatar={post.avatar}
+          image = {post.image}
         />
+        ))}
     </div>
-  )
+  );
 }
 
-export default timeline;
+export default Timeline;
