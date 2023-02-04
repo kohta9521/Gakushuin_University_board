@@ -7,6 +7,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 function timeline() {
 
+  
   const postData = collection(db, "posts");
   getDocs(postData).then((querySnapshot) => {
     console.log(querySnapshot);
