@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import react, {useState} from 'react';
 import "./Timeline.css";
 import TweetBox from "./TweetBox";
@@ -6,15 +6,18 @@ import Post from "./Post";
 import db from "../../firebase";
 import { collection, getDocs } from "firebase/firestore"; 
 import react, { useState } from 'react';
+import { effect } from '@chakra-ui/react';
 
 function Timeline() {
 
   const [posts, setPosts] = useState([]);
 
-  const postData = collection(db, "posts");
-  getDocs(postData).then((querySnapshot) => {
-    setPosts(querySnapshot.docs.map((doc) => doc.data()));
-  });
+  useEffect(() => {
+      const postData = collection(db, "posts");
+      getDocs(postData).then((querySnapshot) => {
+        setPosts(querySnapshot.docs.map((doc) => doc.data()));
+      });
+    }, []);
 
   return (
     <div className='timeline'>
@@ -28,6 +31,7 @@ function Timeline() {
         {/* post */}
         {posts.map((post) => (
         <Post 
+          key={post.text}
           displayName = {post.displayName}
           username = {post.username}
           varified={post.varified}
