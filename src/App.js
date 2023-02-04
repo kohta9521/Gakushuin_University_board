@@ -1,6 +1,6 @@
 import './App.css';
 import Sidebar from "./components/sidebar/sidebar";
-import Timeline from "./components/timeline/timeline";
+import Timeline from "./components/timeline/Timeline";
 import Widgets from "./components/widget/Widgets";
 
 
